@@ -1,0 +1,79 @@
+* { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; box-sizing: border-box; }
+
+body {
+  display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;
+  background-color: #f0f0f0; background-image: url('1 (1).gif'); background-size: cover;
+  background-position: center; flex-direction: column; overflow: hidden; font-family: sans-serif;
+}
+
+.circle {
+  width: 90vw; height: 90vw; max-width: 600px; max-height: 600px; 
+  background-color: #4caf50; border-radius: 50%;
+  display: flex; justify-content: center; align-items: center; 
+  font-size: clamp(6rem, 30vw, 13rem); color: white; text-shadow: 2px 5px 20px rgba(0,0,0,0.7);
+  margin-bottom: 20px; position: relative; cursor: pointer;
+  background-image: url('1 (1).gif'); background-size: cover; background-position: center;
+  transition: all 0.2s ease; border: 12px solid rgba(255,255,255,0.4);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+
+/* تأثير التوهج الأصفر عند الهدف */
+@keyframes goalEffect {
+  0% { transform: scale(1); border-color: rgba(255,255,255,0.4); box-shadow: 0 25px 60px rgba(0,0,0,0.6); }
+  50% { transform: scale(1.05); border-color: #ffd700; box-shadow: 0 0 80px #ffd700; }
+  100% { transform: scale(1); border-color: rgba(255,255,255,0.4); box-shadow: 0 25px 60px rgba(0,0,0,0.6); }
+}
+.active-goal { animation: goalEffect 0.5s ease-in-out 3; border: 12px solid #ffd700 !important; }
+
+.button { 
+  padding: 15px 30px; background-color: #ff4757; color: white; border: none; 
+  border-radius: 10px; cursor: pointer; position: absolute; top: 15px; right: 5px; 
+  font-weight: bold; z-index: 10; font-size: 1.1rem; 
+}
+
+.counter { 
+  position: absolute; bottom: 25px; left: 25px; font-size: 1.6rem; z-index: 8; 
+  background: rgba(255,255,255,0.9); padding: 10px 20px; border-radius: 15px; 
+  border: 2px solid #4caf50; font-weight: bold; 
+}
+
+.menu-button { 
+  position: absolute; top: 15px; left: 5px; background-color: #2f3542; color: white; 
+  padding: 12px 20px; border: none; border-radius: 10px; cursor: pointer; z-index: 100; font-size: 1.2rem; 
+}
+
+.dropdown-menu {
+  position: absolute; top: 40px; left: 15px; background-color: white;
+  color: #333; border-radius: 15px; padding: 25px; display: none; flex-direction: column; 
+  width: 300px; z-index: 90; box-shadow: 0 15px 40px rgba(0,0,0,0.4); border: 1px solid #ddd;
+  max-height: 85vh; overflow-y: auto;
+}
+
+.dropdown-menu label { margin-top: 12px; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
+.styled-select { width: 100%; padding: 8px; margin-top: 5px; border-radius: 8px; border: 1px solid #ccc; background: #f9f9f9; }
+
+.volume-control { background: #f8f9fa; padding: 10px; border-radius: 10px; margin-top: 10px; }
+.volume-control input { width: 100%; margin-top: 5px; }
+
+hr { width: 100%; margin: 15px 0; border: 0; border-top: 1px solid #eee; }
+
+.danger-btn { 
+  background: #fff5f5; color: #ff4757; border: 1px solid #ff4757; padding: 12px; 
+  margin-top: 20px; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%; 
+}
+
+.dialog-box {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background-color: white; padding: 30px; border-radius: 25px;
+  display: none; width: 320px; text-align: center; z-index: 110; 
+  box-shadow: 0 0 150px rgba(0,0,0,0.6); border: 4px solid #ff4757;
+}
+
+.dialog-box p { font-size: 2.5rem; margin: 15px 0; color: #ff4757; font-weight: bold; }
+.dialog-box button { margin: 10px 5px; padding: 12px 20px; border: none; border-radius: 10px; cursor: pointer; width: 120px; font-weight: bold; }
+
+.btn-confirm { background-color: #ff4757; color: white; }
+.btn-cancel { background-color: #e9ecef; color: #333; }
+
+.clock { position: absolute; top: 15px; left: 50%; transform: translateX(-50%); font-size: 2.5rem; color: #000; font-weight: 900; z-index: 10; }
+

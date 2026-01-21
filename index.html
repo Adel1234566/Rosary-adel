@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المسبحة الاحترافية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div style="display:none;">
+    <audio id="clickSound1" src="1 (1).mp3" preload="auto"></audio>
+    <audio id="clickSound2" src="1 (2).mp3" preload="auto"></audio>
+    <audio id="clickSound3" src="1 (3).mp3" preload="auto"></audio>
+    <audio id="clickSound4" src="1 (4).mp3" preload="auto"></audio>
+    <audio id="clickSound5" src="1 (5).mp3" preload="auto"></audio>
+    <audio id="clickSound6" src="1 (6).mp3" preload="auto"></audio>
+    <audio id="clickSound7" src="1 (7).mp3" preload="auto"></audio>
+    <audio id="clickSound8" src="1 (8).mp3" preload="auto"></audio>
+    <audio id="clickSound9" src="1 (9).mp3" preload="auto"></audio>
+    <audio id="errorSound1" src="1 (w).mp3" preload="auto"></audio>
+    <audio id="errorSound2" src="1 (8).mp3" preload="auto"></audio>
+    <audio id="errorSound3" src="1 (6).mp3" preload="auto"></audio>
+    <audio id="sound1" src="عادل سبحان الله.mp3" preload="auto"></audio>
+    <audio id="sound2" src="عادل الحمد لله.mp3" preload="auto"></audio>
+    <audio id="sound3" src="عادل الله اكبر.mp3" preload="auto"></audio>
+    <audio id="sound4" src="عادل لا اله الا الله.mp3" preload="auto"></audio>
+    <audio id="sound5" src="أشهد أن لا إله الا الله.mp3" preload="auto"></audio>
+    <audio id="sound6" src="الله اكبر1.mp3" preload="auto"></audio>
+  </div>
+
+  <button class="menu-button" id="menuButton">☰ الإعدادات</button>
+
+  <div class="dropdown-menu" id="dropdownMenu">
+    <div class="mute-all-box">
+      <label>كتم جميع الأصوات 🔇 <input type="checkbox" id="muteAllCheck"></label>
+    </div>
+
+    <div class="volume-control">
+      <label>مستوى الصوت: <span id="volValue">100%</span></label>
+      <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+    </div>
+
+    <hr>
+
+    <label>صوت التسبيح:</label>
+    <select id="clickSoundSelect" class="styled-select">
+      <option value="clickSound1">صوت 1</option><option value="clickSound2">صوت 2</option>
+      <option value="clickSound3">صوت 3</option><option value="clickSound4">صوت 4</option>
+      <option value="clickSound5">صوت 5</option><option value="clickSound6">صوت 6</option>
+      <option value="clickSound7">صوت 7</option><option value="clickSound8">صوت 8</option>
+      <option value="clickSound9">صوت 9</option>
+    </select>
+
+    <label>صوت التصفير:</label>
+    <select id="errorSoundSelect" class="styled-select">
+      <option value="errorSound1">تصفير 1</option>
+      <option value="errorSound2">تصفير 2</option>
+      <option value="errorSound3">تصفير 3</option>
+    </select>
+
+    <label>كتم صوت الضغط <input type="checkbox" id="muteClickCheck"></label>
+    <label>كتم صوت التصفير <input type="checkbox" id="muteResetCheck"></label>
+    
+    <hr>
+
+    <label>صوت التنبيه (الهدف):</label>
+    <select id="soundSelect" class="styled-select">
+      <option value="sound1">سبحان الله</option><option value="sound2">الحمد لله</option>
+      <option value="sound3">الله اكبر</option><option value="sound4">لا اله الا الله</option>
+      <option value="sound5">أشهد أن لا إله الا الله</option><option value="sound6">1 الله اكبر</option>
+    </select>
+
+    <label>الهدف (تنبيه كل):</label>
+    <select id="goalSelect" class="styled-select">
+      <option value="0">بدون هدف</option>
+      <option value="33">33</option>
+      <option value="100">100</option>
+      <option value="133">133</option>
+      <option value="500">500</option>
+      <option value="1000">1000</option>
+      <option value="custom">رقم مخصص...</option>
+    </select>
+    <input type="number" id="customGoalInput" placeholder="أدخل الرقم" class="styled-select" style="display:none;">
+
+    <button id="resetTotalBtn" class="danger-btn">تصفير الإجمالي العام 00</button>
+  </div>
+
+  <div class="circle" id="circle">
+    <span id="circleCount">0</span>
+  </div>
+
+  <button class="button" id="resetButton">تصفير</button>
+
+  <div class="counter">
+    <span>الإجمالي: </span><span id="countDisplay">0</span>
+  </div>
+
+  <div class="dialog-box" id="dialogBox">
+    <h3>تصفير الدورة؟</h3>
+    <p id="dialogNumber">0</p>
+    <button class="btn-confirm" id="resetConfirm">تصفير</button>
+    <button class="btn-cancel" id="cancelReset">إلغاء</button>
+  </div>
+
+  <div class="clock" id="clock">00:00</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
