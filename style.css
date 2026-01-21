@@ -75,5 +75,5 @@ hr { width: 100%; margin: 15px 0; border: 0; border-top: 1px solid #eee; }
 .btn-confirm { background-color: #ff4757; color: white; }
 .btn-cancel { background-color: #e9ecef; color: #333; }
 
-.clock { position: absolute; top: 15px; left: 50%; transform: translateX(-50%); font-size: 2.5rem; color: #000; font-weight: 900; z-index: 10; }
+.clock { position: absolute; top: 15px; left: 52%; transform: translateX(-50%); font-size: 2.5rem; color: #000; font-weight: 900; z-index: 10; }
 
